@@ -10,9 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+import org.springframework.hateoas.RepresentationModel;
+
 @Entity
 @Table(name = "TB_PRODUCTS")
-public class ProductModel implements Serializable {
+public class ProductModel extends RepresentationModel<ProductModel> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -45,5 +48,7 @@ public class ProductModel implements Serializable {
 	public void setValue(BigDecimal value) {
 		this.value = value;
 	}
+
+	
 
 }
